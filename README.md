@@ -1,12 +1,57 @@
-# CSC490Team1
+# Rocket Telemetry & Flight Data System
 
-Water Rocket for Senior Project using 1 Arduino Nano 33 BLE Sense to gather data from flights and 2 Arduino Nano 33 BLE, 1 to control the servo and 1 to transfer data between central (BLE Controller) and periferal (Sense in rocket) for later analysis.
+An embedded systems and telemetry software architecture designed for flight data acquisition, real-time control, and telemetry visualization. Developed as a Senior Capstone Project (CSC 490) at Fayetteville State University.
 
-GUI using PyQt5 and data graphing from matplotlib for data vizualization.
-Data collected includes acceleration, Gyroscope, Magnetometer and Altitude.
+## System Architecture & Technology Stack
 
-CSC 490 Fall 21 Team 1 members: Jean Paul Fermaint, Christian Torres and Jamal Bryant
+The project utilizes a multi-node wireless network over Bluetooth Low Energy (BLE) to orchestrate data collection and mechanical actuation:
 
-Class Professor: Dr. Jin
+*   **Hardware Ecosystem:**
+    *   `1x Arduino Nano 33 BLE Sense`: Positioned on the water rocket payload to aggregate sensor data.
+    *   `1x Arduino Nano 33 BLE`: Configured as the central controller to actuate physical servos.
+    *   `1x Arduino Nano 33 BLE`: Dedicated to managing real-time data streaming between the central controller and the peripheral flight node.
+*   **Software & Data Engineering:**
+    *   **Firmware:** C++ / Arduino embedded programming (`.ino`) implementing BLE communication protocols.
+    *   **Data Acquisition:** Real-time logging of IMU and environmental telemetry, including **Acceleration, Gyroscope, Magnetometer, and Altitude**.
+    *   **Dashboard & Visualization:** Python application featuring a custom graphical user interface built with **PyQt5** and dynamic telemetry data graphing leveraging **Matplotlib**.
 
-Advisor: Professor Joe Kabbes
+---
+
+## Engineering Team & Academic Supervision
+
+*   **Developers:** Jean Paul Fermaint, Christian Torres, Jamal Bryant
+*   **Class Professor:** Dr. Jin
+*   **Project Advisor:** Professor Joe Kabbes
+*   **Timeline:** Fall 2021
+
+## Installation & Execution Guide
+
+Follow these steps to set up the local environment and run the telemetry dashboard.
+
+### 1. Prerequisites & Environment Setup
+Ensure you have Python 3.8+ installed on your system. Clone the repository and navigate to the project directory:
+
+```bash
+git clone https://github.com
+cd CSC490Team1
+```
+
+### 2. Install Dependencies
+Install the required libraries for the graphical user interface, Bluetooth processing, and data plotting:
+
+```bash
+pip install PyQt5 matplotlib
+```
+
+### 3. Running the Telemetry Dashboard
+Launch the main Python interface to begin monitoring the flight data visualizations:
+
+```bash
+python uiDesing.py
+```
+*(Note: If you update the file name to fix the typo, replace this with `python uiDesign.py`)*
+
+### Firmware Deployment (Embedded Hardware)
+* Open `RocketFlight_central.ino` and `RocketFlight_peripheral.ino` using the Arduino IDE.
+* Install the `ArduinoBLE` library via the Library Manager.
+* Compile and flash the respective files to your **Arduino Nano 33 BLE** boards to initiate node-to-node wireless communications.
