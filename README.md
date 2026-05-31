@@ -1,8 +1,8 @@
-# Rocket Telemetry & Flight Data System
+# Rocket Telemetry & Flight Data System 🚀
 
-An embedded systems and telemetry software architecture designed for flight data acquisition, real-time control, and telemetry visualization. Developed as a Senior Capstone Project (CSC 490) at Fayetteville State University.
+An embedded systems and telemetry software architecture designed for flight data acquisition, real-time control, and telemetry visualization. Developed as a Senior Capstone Project at Fayetteville State University.
 
-## System Architecture & Technology Stack
+## 🛠️ System Architecture & Technology Stack
 
 The project utilizes a multi-node wireless network over Bluetooth Low Energy (BLE) to orchestrate data collection and mechanical actuation:
 
@@ -17,14 +17,7 @@ The project utilizes a multi-node wireless network over Bluetooth Low Energy (BL
 
 ---
 
-## Engineering Team & Academic Supervision
-
-*   **Developers:** Jean Paul Fermaint, Christian Torres, Jamal Bryant
-*   **Class Professor:** Dr. Jin
-*   **Project Advisor:** Professor Joe Kabbes
-*   **Timeline:** Fall 2021
-
-## Installation & Execution Guide
+## 🚀 Installation & Execution Guide
 
 Follow these steps to set up the local environment and run the telemetry dashboard.
 
@@ -33,25 +26,33 @@ Ensure you have Python 3.8+ installed on your system. Clone the repository and n
 
 ```bash
 git clone https://github.com
-cd CSC490Team1
+cd rocket-telemetry-system
 ```
 
 ### 2. Install Dependencies
-Install the required libraries for the graphical user interface, Bluetooth processing, and data plotting:
+Install all required packages instantly using the project's dependency manifest:
 
 ```bash
-pip install PyQt5 matplotlib
+pip install -r requirements.txt
 ```
 
 ### 3. Running the Telemetry Dashboard
 Launch the main Python interface to begin monitoring the flight data visualizations:
 
 ```bash
-python uiDesing.py
+python uiDesign.py
 ```
-*(Note: If you update the file name to fix the typo, replace this with `python uiDesign.py`)*
 
-### Firmware Deployment (Embedded Hardware)
+### 🔌 Firmware Deployment (Embedded Hardware)
 * Open `RocketFlight_central.ino` and `RocketFlight_peripheral.ino` using the Arduino IDE.
 * Install the `ArduinoBLE` library via the Library Manager.
 * Compile and flash the respective files to your **Arduino Nano 33 BLE** boards to initiate node-to-node wireless communications.
+
+---
+
+## 👥 Engineering Team & Academic Supervision
+
+*   **Developers:** Jean Paul Fermaint, Christian Torres, Jamal Bryant
+*   **Class Professor:** Dr. Jin
+*   **Project Advisor:** Professor Joe Kabbes
+*   **Timeline:** Fall 2021
