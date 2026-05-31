@@ -52,7 +52,7 @@ python uiDesign.py
 
 ## 👥 Engineering Team & Academic Supervision
 
-*   **Developers:** Jean Paul Fermaint, Christian Torres, Jamal Bryant
+*   **Developers:** Jean Paul Fermaint, Christian Torres
 *   **Class Professor:** Dr. Jin
 *   **Project Advisor:** Professor Joe Kabbes
 *   **Timeline:** Fall 2021
